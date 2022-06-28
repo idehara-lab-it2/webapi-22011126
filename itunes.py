@@ -17,5 +17,14 @@ print(json.dumps(data, indent=4, ensure_ascii=False).encode().decode())
 
 # 件数の表示
 print('検索結果：' + str(data['resultCount']) + ' 件')
-print(data['results'][0]['collectionName'])
-print(data['results'][0]['trackName'])
+z =[]
+y = int(data['resultCount'])
+for i in range(y):
+  if 'collectionName' in data['results'][i]:
+    print(data['results'][i]['collectionName'])
+    z.append(data['results'][i]['collectionName'])
+print(z)
+print(set(z))
+       
+
+  
